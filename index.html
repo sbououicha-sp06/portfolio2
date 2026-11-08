@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ✏️ MODIFIE: titre et description (visibles dans Google et l'onglet) -->
+<title>Saad Bou-ouicha | Portfolio</title>
+<meta name="description" content="Portfolio de Saad Bou-ouicha, développeur web.">
+<meta name="theme-color" content="#070b18">
+<!-- ✏️ Image de partage (WhatsApp, LinkedIn...). Mets une image 1200x630 nommée og-image.jpg. Après publication, remplace par l'adresse complète de ton site. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saad Bou-ouicha | Portfolio">
+<meta property="og:description" content="Portfolio de Saad Bou-ouicha, ingénieur.">
+<meta property="og:image" content="og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b18'/%3E%3Ctext x='32' y='43' font-size='30' font-weight='700' text-anchor='middle' fill='%233ddc97' font-family='sans-serif'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ===== INTRO 3D: portail doré =====
+     ✏️ Les lignes du terminal sont dans script.js (LINES). Ajoute ?intro=0 à l'adresse pour la sauter. -->
+<div id="intro" role="dialog" aria-label="Introduction">
+  <canvas class="intro-gl"></canvas>
+  <div class="intro-term" aria-hidden="true"></div>
+  <div class="intro-hud" aria-hidden="true"><span class="intro-pct">SYSTEM BOOT 0%</span><div class="intro-bar"><i></i></div></div>
+  <div class="intro-flash"></div>
+  <button type="button" class="intro-skip">Passer l'intro →</button>
+</div>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<header>
+  <a class="logo" href="#accueil" aria-label="Saad Bou-ouicha, accueil">SB</a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <nav id="nav">
+    <a href="#accueil" class="on">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#services">Services</a>
+    <a href="#projets">Projets</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== ACCUEIL ===== -->
+  <section id="accueil">
+    <!-- ✏️ Terminal: les mots qui s'écrivent sont dans le script (MOTS) -->
+    <div class="term" aria-hidden="true"><span class="prompt">$</span> <span id="typed">whoami</span><span class="cur"></span></div>
+    <div class="hero-id">
+      <!-- ✏️ PHOTO: mets ta photo dans le même dossier et appelle-la photo.jpg (carrée, c'est mieux) -->
+      <figure class="photo">
+        <span>Ta photo</span>
+        <img src="saad.jpeg" alt="Photo de Saad Bou-ouicha" onerror="this.remove()">
+      </figure>
+      <h1>Saad Bou-ouicha</h1> <!-- ✏️ ton nom -->
+    </div>
+    <p>Étudiant ingénieur en informatique, orienté cybersécurité. Je conçois des projets concrets, de la robotique à la sécurité des systèmes.</p> <!-- ✏️ ton accroche -->
+    <div class="btns">
+      <a class="btn" href="#projets">Voir mes projets</a>
+      <a class="btn ghost" href="#contact">Me contacter</a>
+      <!-- ✏️ CV: mets ton fichier PDF dans le même dossier et appelle-le cv.pdf -->
+      <a class="btn ghost" href="CV_Saad_Bou_Ouicha vs.pdf" download>Télécharger mon CV</a>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS ===== -->
+  <section id="apropos">
+    <h2>À propos</h2>
+    <div class="about">
+      <div class="about-text">
+    <p>Étudiant en 3e année de cycle ingénieur en informatique, après un bac sciences physiques et deux années de classes préparatoires. Je cherche un stage où je peux apprendre et construire.</p> <!-- ✏️ vérifie et ajuste ce texte -->
+    <p>J'aime les projets concrets : l'an dernier, j'ai réalisé un robot à commande vocale. Je continue à me former avec des certificats et des projets personnels.</p> <!-- ✏️ -->
+    <div class="grid">
+      <div class="card"><h3>Ville</h3><p style="margin:0">Tetouan, Maroc</p></div>  <!-- ✏️ -->
+      <div class="card"><h3>Langues</h3><p style="margin:0"> Français, anglais</p></div> <!-- ✏️ -->
+      <div class="card"><h3>Disponibilité</h3><p style="margin:0"> Ouvert aux stages</p></div> <!-- ✏️ -->
+    </div>
+    <!-- ✏️ CHIFFRES CLÉS: change data-count (le nombre) et le texte -->
+    <div class="stats">
+      <div><strong data-count="3" data-suffix="+">0</strong><span>Années d'expérience</span></div>
+      <div><strong data-count="10" data-suffix="+">0</strong><span>Projets réalisés</span></div>
+      <div><strong data-count="5">0</strong><span>Certifications</span></div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPÉTENCES ===== -->
+  <section id="competences">
+    <h2>Compétences</h2>
+    <!-- ✏️ POURCENTAGES: change juste data-level="80" et le nom. Le % et la barre se mettent à jour tout seuls.
+         Pour ajouter une compétence, copie un bloc <div class="bar" ...> -->
+    <div class="skillgrid">
+      <div class="card">
+        <h3>Développement</h3>
+        <div class="bar" data-level="80"><div><span>C++</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="85"><div><span>HTML / CSS</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="70"><div><span>JavaScript</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="60"><div><span>Python</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+      </div>
+     
+      <div class="card">
+        <h3>Outils</h3>
+        <div class="bar" data-level="80"><div><span>Latex Overleaf</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="75"><div><span>Git / GitHub</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="70"><div><span>Kali Linux</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="88"><div><span>VS-code</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+      </div>
+
+      <div class="card">
+        <h3>Langues</h3>
+        <div class="bar" data-level="80"><div><span>Français</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+        <div class="bar" data-level="70"><div><span>Anglais</span><span class="pct">0%</span></div><div class="track"><div class="fill"></div></div></div>
+      </div>
+    </div>
+    <h3 class="coltitle">Savoir-être</h3>
+    <div class="skills">
+      <!-- ✏️ Ajoute ou enlève des <span> -->
+      <span>Esprit d'équipe</span><span>Rigueur</span><span>Autonomie</span><span>Résolution de problèmes</span><span>Curiosité</span>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <h2>Services</h2>
+    <p>Comment je peux sécuriser ton projet ou ton entreprise.</p>
+    <div class="grid">
+      <!-- ✏️ Un bloc <article> par service -->
+      <article class="card" data-cat="autre"><h3>Audit de sécurité</h3><p>Analyse de ton système, détection des failles et plan de correction clair.</p><div class="tags"><span>Audit</span><span>Vulnérabilités</span></div></article>
+      <article class="card" data-cat="securite"><h3>Test d'intrusion</h3><p>Simulation d'attaque contrôlée pour tester la résistance réelle de tes systèmes.</p><div class="tags"><span>Pentest</span><span>Kali</span></div></article>
+      <article class="card" data-cat="web"><h3>Sécurisation et formation</h3><p>Durcissement des systèmes, bonnes pratiques et sensibilisation des équipes.</p><div class="tags"><span>Hardening</span><span>Sensibilisation</span></div></article>
+    </div>
+  </section>
+
+  <!-- ===== PROJETS ===== -->
+  <section id="projets">
+    <h2>Projets</h2>
+    <!-- ✏️ FILTRES: data-cat sur chaque projet doit correspondre à data-f du bouton (web, securite, autre) -->
+    <div class="filters">
+      <button type="button" data-f="all" aria-pressed="true">Tous</button>
+      <button type="button" data-f="web" aria-pressed="false">Web</button>
+      <button type="button" data-f="securite" aria-pressed="false">Sécurité</button>
+      <button type="button" data-f="autre" aria-pressed="false">Autre</button>
+    </div>
+    <div class="grid">
+
+      <!-- ✏️ UN PROJET = UN BLOC <article>. Copie-colle pour en ajouter. -->
+      <article class="card">
+          <img src="ROBOT COMMANDE VOCALE.png" alt="..." style="width:100%;border-radius:10px">
+        <h3>Robot à commande vocale</h3>
+        <p>Robot piloté par la voix, réalisé l'an dernier. Décris le matériel utilisé et ce que tu as fait toi-même.</p>
+        <div class="tags"><span>Robotique</span><span>Commande vocale</span></div>
+        <div class="links"><a href="Rapport-Robot-Commande-Vocale fin.pdf" target="_blank">Voir le rapport</a><a href="#">Code (GitHub)</a></div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">Image du projet</div>
+        <h3>Gestion de projets et tâches collaboratif</h3>
+        <p>Application web collaborative de gestion de projets et de tâches avec un assistant IA intégré, qui aide l’équipe à organiser le travail et à suivre l’avancement. Conçue et développée en PHP/MySQL.</p>
+        <div class="tags"><span>PHP</span><span>MySQL</span></div>
+        <div class="links"><a href="#">Voir le site</a><a href="#">Code (GitHub)</a></div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">Image du projet</div>
+        <h3>Nom du projet 3</h3>
+        <p>Décris en 1 ou 2 phrases ce que fait le projet et ton rôle.</p>
+        <div class="tags"><span>Techno</span><span>Techno</span></div>
+        <div class="links"><a href="#">Voir le site</a><a href="#">Code (GitHub)</a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== PARCOURS ===== -->
+  <section id="parcours">
+    <h2>Parcours</h2>
+    <div class="cols">
+      <div>
+        <h3 class="coltitle">Formation</h3>
+        <div class="timeline">
+          <!-- ✏️ Un bloc .step par étape, du plus récent au plus ancien -->
+          <div class="step"><small>2026 – 2027</small><h3>Cycle ingénieur en informatique, 3e année</h3><p>[Nom de ton école]. Spécialité et projets de l'année.</p></div>
+          <div class="step"><small>2024– 2026</small><h3>Classes préparatoires (Bac +2)</h3><p>[Nom de l'établissement]. Deux années de préparation aux concours.</p></div>
+          <div class="step"><small>2024</small><h3>Baccalauréat Sciences Physiques</h3><p>[Nom du lycée]. Mention si tu en as une.</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="coltitle">Expérience</h3>
+        <div class="timeline">
+          <div class="step"><small>Été 2025</small><h3>Stage / Poste</h3><p>Entreprise. Missions réalisées et technologies utilisées.</p></div>
+          <div class="step"><small>Été 2024</small><h3>Stage / Poste</h3><p>Entreprise. Missions réalisées et résultats.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="coltitle" style="margin-top:3rem">Certifications</h3>
+    <div class="grid">
+      <!-- ✏️ Un bloc <article> par certification. Copie-colle pour en ajouter autant que tu veux. Mets le nom exact et l'organisme. -->
+      <article class="card"><h3>Comment créer une application</h3><p>Organisme · 2025</p><div class="links"><a href="#">Voir le certificat</a></div></article>
+      <article class="card"><h3>Nom de la certification</h3><p>Organisme · 2024</p><div class="links"><a href="#">Voir le certificat</a></div></article>
+      <article class="card"><h3>Nom de la certification</h3><p>Organisme · 2023</p><div class="links"><a href="#">Voir le certificat</a></div></article>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="cols">
+      <div>
+        <p>Un projet, un stage, une opportunité ou juste une question ? Écris-moi, je réponds vite.</p>
+        <!-- ✏️ Tes coordonnées -->
+        <p style="margin-bottom:.4rem"><a href="mailto:saadbououicha@gmail.com">saadbououicha@gmail.com</a></p>
+        <p style="margin-bottom:.4rem"><a href="tel:+212620476453">+212 6 20 47 64 53</a></p>
+        <p>Tetouan, Maroc</p>
+        <div class="btns">
+          <a class="btn ghost" href="https://github.com/ton-pseudo" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://wa.me/212620476453" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" href="CV_Saad_Bou_Ouicha vs.pdf" download>CV</a>
+        </div>
+      </div>
+      <form id="form" class="card">
+        <label for="f-nom">Nom</label>
+        <input id="f-nom" name="nom" type="text" required autocomplete="name">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" required autocomplete="email">
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg" name="message" rows="5" required></textarea>
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+        <button class="btn" type="submit">Envoyer le message</button>
+        <p id="statut" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© <span id="annee"></span> Saad Bou-ouicha. Tous droits réservés.</div>
+  <div class="flinks"><a href="https://github.com/ton-pseudo" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:saadbououicha@gmail.com">Email</a></div>
+</footer>
+<a id="top" href="#accueil" aria-label="Retour en haut">↑</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
